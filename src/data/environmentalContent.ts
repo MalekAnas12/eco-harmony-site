@@ -1,6 +1,8 @@
 import pollutionImage from "@/assets/pollution.jpg";
 import ecosystemImage from "@/assets/ecosystem.jpg";
 import renewableImage from "@/assets/renewable-energy.jpg";
+import waterPollutionImage from "@/assets/water-pollution.jpg";
+import soilPollutionImage from "@/assets/soil-pollution.jpg";
 
 interface ContentItem {
   title: string;
@@ -63,14 +65,14 @@ export const environmentalSections: Record<string, EnvironmentalSection> = {
       {
         title: "Water Pollution",
         description: "Contamination of water bodies by harmful substances affecting aquatic life and human health.",
-        image: pollutionImage,
+        image: waterPollutionImage,
         content: "Types include chemical pollution (pesticides, fertilizers), biological pollution (bacteria, viruses), physical pollution (plastic, debris), and thermal pollution (heated water discharge). Prevention strategies include wastewater treatment, sustainable agriculture, and plastic reduction.",
         tags: ["Water Quality", "Aquatic Life", "Chemicals"],
       },
       {
         title: "Soil Pollution", 
         description: "Degradation of soil quality due to chemical contamination affecting agriculture and ecosystems.",
-        image: ecosystemImage,
+        image: soilPollutionImage,
         content: "Causes include excessive use of pesticides and fertilizers, industrial waste disposal, oil spills and chemical leaks, and heavy metals from mining. Impact includes reduced crop yields, groundwater contamination, and ecosystem disruption.",
         tags: ["Soil Health", "Agriculture", "Contamination"],
       },

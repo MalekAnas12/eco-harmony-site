@@ -2,6 +2,7 @@ import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { ArrowDown, Globe, Heart, TreePine } from "lucide-react";
 import heroImage from "@/assets/hero-environment.jpg";
+import natureBg from "@/assets/nature-video-bg.jpg";
 
 interface HeroSectionProps {
   onExploreClick: () => void;
@@ -10,21 +11,15 @@ interface HeroSectionProps {
 const HeroSection = ({ onExploreClick }: HeroSectionProps) => {
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
-      {/* Video Background */}
+      {/* Animated Background */}
       <div className="absolute inset-0">
-        <video 
-          autoPlay 
-          muted 
-          loop 
-          playsInline
-          className="w-full h-full object-cover"
-          poster={heroImage}
-        >
-          <source src="/videos/nature-background.mp4" type="video/mp4" />
-        </video>
-        {/* Fallback to image if video doesn't load */}
         <div 
-          className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+          className="absolute inset-0 bg-cover bg-center bg-no-repeat animate-slow-zoom"
+          style={{ backgroundImage: `url(${natureBg})` }}
+        />
+        {/* Fallback image */}
+        <div 
+          className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-70"
           style={{ backgroundImage: `url(${heroImage})` }}
         />
       </div>
