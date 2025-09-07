@@ -107,7 +107,10 @@ const Index = () => {
           </div>
           <div className="border-t border-primary-foreground/20 mt-8 pt-8 text-center">
             <p className="text-sm opacity-80">
-              © 2024 EcoAware. Built with passion for our planet's future.
+              © 2026 EcoAware. Built with passion for our planet's future.
+            </p>
+            <p className="text-sm opacity-80 mt-1">
+              24MSIT059
             </p>
           </div>
         </div>

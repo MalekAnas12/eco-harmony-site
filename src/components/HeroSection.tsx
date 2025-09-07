@@ -10,11 +10,24 @@ interface HeroSectionProps {
 const HeroSection = ({ onExploreClick }: HeroSectionProps) => {
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
-      {/* Background Image */}
-      <div 
-        className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-        style={{ backgroundImage: `url(${heroImage})` }}
-      />
+      {/* Video Background */}
+      <div className="absolute inset-0">
+        <video 
+          autoPlay 
+          muted 
+          loop 
+          playsInline
+          className="w-full h-full object-cover"
+          poster={heroImage}
+        >
+          <source src="/videos/nature-background.mp4" type="video/mp4" />
+        </video>
+        {/* Fallback to image if video doesn't load */}
+        <div 
+          className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+          style={{ backgroundImage: `url(${heroImage})` }}
+        />
+      </div>
       
       {/* Overlay */}
       <div className="absolute inset-0 hero-overlay" />
@@ -24,7 +37,7 @@ const HeroSection = ({ onExploreClick }: HeroSectionProps) => {
         <div className="max-w-4xl mx-auto animate-fade-in">
           <h1 className="text-5xl lg:text-7xl font-bold text-white mb-6 leading-tight">
             Protect Our
-            <span className="block gradient-forest bg-clip-text text-transparent">
+            <span className="block text-white font-bold drop-shadow-lg">
               Beautiful Planet
             </span>
           </h1>
