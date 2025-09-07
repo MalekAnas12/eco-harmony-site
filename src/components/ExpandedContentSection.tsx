@@ -1,7 +1,8 @@
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
-import { ChevronRight, ExternalLink } from "lucide-react";
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
+import { ExternalLink } from "lucide-react";
 
 interface ContentItem {
   title: string;
@@ -32,47 +33,48 @@ const ExpandedContentSection = ({ id, title, subtitle, items, className = "" }: 
           </p>
         </div>
 
-        {/* Content Grid */}
-        <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+        {/* Interactive Accordion Content */}
+        <Accordion type="multiple" className="w-full space-y-4">
           {items.map((item, index) => (
-            <Card 
+            <AccordionItem 
               key={index} 
-              className="nature-hover group cursor-pointer animate-scale-in h-full"
+              value={`item-${index}`}
+              className="border border-border rounded-lg bg-card shadow-sm animate-fade-in"
               style={{ animationDelay: `${index * 0.1}s` }}
             >
-              {item.image && (
-                <div className="relative overflow-hidden rounded-t-lg h-48">
-                  <img 
-                    src={item.image} 
-                    alt={item.title}
-                    className="w-full h-full object-cover transition-smooth group-hover:scale-110"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent" />
+              <AccordionTrigger className="px-6 py-4 hover:no-underline group">
+                <div className="flex items-center gap-4 w-full">
+                  {item.image && (
+                    <div className="relative overflow-hidden rounded-lg w-16 h-16 flex-shrink-0">
+                      <img 
+                        src={item.image} 
+                        alt={item.title}
+                        className="w-full h-full object-cover transition-smooth group-hover:scale-110"
+                      />
+                    </div>
+                  )}
+                  <div className="flex-1 text-left">
+                    <h3 className="text-lg font-semibold text-primary group-hover:text-primary-light transition-smooth">
+                      {item.title}
+                    </h3>
+                    <p className="text-sm text-muted-foreground mt-1">
+                      {item.description}
+                    </p>
+                  </div>
                 </div>
-              )}
+              </AccordionTrigger>
               
-              <CardHeader>
-                <div className="flex items-start justify-between">
-                  <CardTitle className="text-xl font-bold text-primary group-hover:text-primary-light transition-smooth">
-                    {item.title}
-                  </CardTitle>
-                  <ChevronRight className="w-5 h-5 text-muted-foreground group-hover:text-primary transition-smooth group-hover:translate-x-1" />
-                </div>
-                <CardDescription className="text-base leading-relaxed">
-                  {item.description}
-                </CardDescription>
-              </CardHeader>
-
-              <CardContent className="flex-1 flex flex-col">
-                <div className="space-y-4 flex-1">
-                  {/* Content */}
-                  <div className="text-sm text-foreground leading-relaxed">
+              <AccordionContent className="px-6 pb-6">
+                <div className="space-y-4">
+                  {/* Detailed Content */}
+                  <div className="text-foreground leading-relaxed bg-muted/30 p-4 rounded-lg">
                     {item.content}
                   </div>
 
                   {/* Tags */}
                   {item.tags && (
                     <div className="flex flex-wrap gap-2">
+                      <span className="text-sm font-medium text-muted-foreground mr-2">Topics:</span>
                       {item.tags.map((tag, tagIndex) => (
                         <Badge 
                           key={tagIndex} 
@@ -87,26 +89,29 @@ const ExpandedContentSection = ({ id, title, subtitle, items, className = "" }: 
 
                   {/* Links */}
                   {item.links && (
-                    <div className="flex flex-wrap gap-2 pt-2">
-                      {item.links.map((link, linkIndex) => (
-                        <Button
-                          key={linkIndex}
-                          variant="outline"
-                          size="sm"
-                          className="h-8 text-xs"
-                          onClick={() => window.open(link.url, '_blank')}
-                        >
-                          <ExternalLink className="w-3 h-3 mr-1" />
-                          {link.label}
-                        </Button>
-                      ))}
+                    <div className="space-y-2">
+                      <span className="text-sm font-medium text-muted-foreground">Learn More:</span>
+                      <div className="flex flex-wrap gap-2">
+                        {item.links.map((link, linkIndex) => (
+                          <Button
+                            key={linkIndex}
+                            variant="outline"
+                            size="sm"
+                            className="h-8 text-xs"
+                            onClick={() => window.open(link.url, '_blank')}
+                          >
+                            <ExternalLink className="w-3 h-3 mr-1" />
+                            {link.label}
+                          </Button>
+                        ))}
+                      </div>
                     </div>
                   )}
                 </div>
-              </CardContent>
-            </Card>
+              </AccordionContent>
+            </AccordionItem>
           ))}
-        </div>
+        </Accordion>
       </div>
     </section>
   );
