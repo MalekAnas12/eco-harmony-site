@@ -109,7 +109,7 @@ const InfographicsSection = () => {
           {infographics.map((infographic, index) => (
             <Card 
               key={index} 
-              className="nature-hover group animate-scale-in"
+              className="nature-hover group animate-scale-in flex flex-col h-full"
               style={{ animationDelay: `${index * 0.1}s` }}
             >
               <CardHeader className="text-center">
@@ -124,8 +124,8 @@ const InfographicsSection = () => {
                 </CardDescription>
               </CardHeader>
 
-              <CardContent>
-                <div className="space-y-4">
+              <CardContent className="flex-1 flex flex-col">
+                <div className="space-y-4 flex-1 flex flex-col">
                   {/* Statistics */}
                   <div className="space-y-3">
                     {infographic.stats.map((stat, statIndex) => (
@@ -154,19 +154,24 @@ const InfographicsSection = () => {
                     ))}
                   </div>
 
+                  {/* Spacer to push button to bottom */}
+                  <div className="flex-1" />
+
                   {/* View Real Data Button */}
-                  <Button
-                    variant="default"
-                    size="sm"
-                    className="w-full mt-4 gap-2"
-                    onClick={() => window.open(infographic.source, '_blank')}
-                  >
-                    <ExternalLink className="w-4 h-4" />
-                    View Real-Time Data
-                  </Button>
-                  <p className="text-xs text-muted-foreground text-center mt-2">
-                    Source: {infographic.sourceName}
-                  </p>
+                  <div className="pt-4">
+                    <Button
+                      variant="default"
+                      size="sm"
+                      className="w-full gap-2"
+                      onClick={() => window.open(infographic.source, '_blank')}
+                    >
+                      <ExternalLink className="w-4 h-4" />
+                      View Real-Time Data
+                    </Button>
+                    <p className="text-xs text-muted-foreground text-center mt-2">
+                      Source: {infographic.sourceName}
+                    </p>
+                  </div>
                 </div>
               </CardContent>
             </Card>
