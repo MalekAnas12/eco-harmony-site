@@ -6,6 +6,8 @@ import soilPollutionImage from "@/assets/soil-pollution.jpg";
 import noisePollutionImage from "@/assets/noise-pollution.jpg";
 import amazonRainforestImage from "@/assets/amazon-rainforest.jpg";
 import energyPyramidImage from "@/assets/energy-pyramid.jpg";
+import nonRenewableImage from "@/assets/non-renewable-resources.jpg";
+import sustainableManagementImage from "@/assets/sustainable-management.jpg";
 
 interface ContentItem {
   title: string;
@@ -171,12 +173,14 @@ export const environmentalSections: Record<string, EnvironmentalSection> = {
       {
         title: "Non-Renewable Resources",
         description: "Finite resources including fossil fuels and minerals that require careful management and alternatives.",
+        image: nonRenewableImage,
         content: "Fossil fuel reserves include Coal (1,139 billion tons), Oil (1.73 trillion barrels), and Natural Gas (188 trillion m³). Environmental impacts include CO₂ emissions, air pollution, and habitat destruction. Transitioning to renewables is essential.",
         tags: ["Fossil Fuels", "Mining", "Finite"],
       },
       {
         title: "Sustainable Resource Management",
         description: "Principles and practices for using natural resources responsibly to ensure availability for future generations.",
+        image: sustainableManagementImage,
         content: "Key principles include Reduce consumption and waste, Reuse materials when possible, Recycle to minimize extraction, and Replace with renewable alternatives. The circular economy model designs out waste, keeps products in use, and regenerates natural systems.",
         tags: ["Sustainability", "Circular Economy", "Conservation"],
       },
