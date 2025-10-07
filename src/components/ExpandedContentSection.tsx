@@ -1,7 +1,9 @@
+import { useState } from "react";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { ChevronRight, ExternalLink } from "lucide-react";
+import DetailedContentDialog from "./DetailedContentDialog";
 
 interface ContentItem {
   title: string;
@@ -21,7 +23,16 @@ interface ExpandedContentSectionProps {
 }
 
 const ExpandedContentSection = ({ id, title, subtitle, items, className = "" }: ExpandedContentSectionProps) => {
+  const [selectedItem, setSelectedItem] = useState<ContentItem | null>(null);
+  const [dialogOpen, setDialogOpen] = useState(false);
+
+  const handleCardClick = (item: ContentItem) => {
+    setSelectedItem(item);
+    setDialogOpen(true);
+  };
+
   return (
+    <>
     <section id={id} className={`py-20 ${className}`}>
       <div className="container mx-auto px-4 lg:px-8">
         {/* Section Header */}
@@ -39,6 +50,7 @@ const ExpandedContentSection = ({ id, title, subtitle, items, className = "" }: 
               key={index} 
               className="nature-hover group cursor-pointer animate-scale-in h-full"
               style={{ animationDelay: `${index * 0.1}s` }}
+              onClick={() => handleCardClick(item)}
             >
               {item.image && (
                 <div className="relative overflow-hidden rounded-t-lg h-48">
@@ -108,7 +120,14 @@ const ExpandedContentSection = ({ id, title, subtitle, items, className = "" }: 
           ))}
         </div>
       </div>
+
+      <DetailedContentDialog 
+        item={selectedItem}
+        open={dialogOpen}
+        onOpenChange={setDialogOpen}
+      />
     </section>
+    </>
   );
 };
 
