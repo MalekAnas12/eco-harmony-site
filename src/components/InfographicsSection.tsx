@@ -1,12 +1,13 @@
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { BarChart3, PieChart, TrendingUp, Zap, Droplets, Leaf, Globe, Users } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { BarChart3, PieChart, TrendingUp, Zap, Droplets, Leaf, Globe, Users, ExternalLink } from "lucide-react";
 
 const InfographicsSection = () => {
   const infographics = [
     {
       title: "Global CO₂ Emissions by Sector",
-      description: "Understanding the main sources of carbon dioxide emissions worldwide",
+      description: "Real-time data on carbon dioxide emissions worldwide",
       icon: <BarChart3 className="w-8 h-8 text-primary" />,
       stats: [
         { label: "Energy Production", value: "25%", color: "bg-red-500" },
@@ -16,11 +17,13 @@ const InfographicsSection = () => {
         { label: "Buildings", value: "6%", color: "bg-purple-500" },
         { label: "Other Energy Uses", value: "10%", color: "bg-orange-500" },
       ],
-      tags: ["Climate Change", "Emissions", "Data"],
+      tags: ["Climate Change", "Emissions", "Real-time"],
+      source: "https://www.iea.org/data-and-statistics",
+      sourceName: "IEA - Global CO₂ Data",
     },
     {
       title: "Renewable Energy Growth",
-      description: "The rapid expansion of clean energy sources globally",
+      description: "Live tracking of clean energy expansion globally",
       icon: <Zap className="w-8 h-8 text-secondary" />,
       stats: [
         { label: "Solar Capacity Growth (2020-2023)", value: "+85%", color: "bg-yellow-400" },
@@ -28,11 +31,13 @@ const InfographicsSection = () => {
         { label: "Hydroelectric Share", value: "16%", color: "bg-cyan-400" },
         { label: "Total Renewable Share", value: "30%", color: "bg-green-400" },
       ],
-      tags: ["Clean Energy", "Growth", "Future"],
+      tags: ["Clean Energy", "Growth", "Live Data"],
+      source: "https://www.irena.org/Data",
+      sourceName: "IRENA - Renewable Energy Statistics",
     },
     {
       title: "Water Scarcity Crisis",
-      description: "Global water availability and consumption patterns",
+      description: "Current global water availability and consumption",
       icon: <Droplets className="w-8 h-8 text-blue-600" />,
       stats: [
         { label: "People Without Clean Water", value: "2.2B", color: "bg-red-400" },
@@ -40,11 +45,13 @@ const InfographicsSection = () => {
         { label: "Industrial Water Use", value: "20%", color: "bg-gray-400" },
         { label: "Domestic Water Use", value: "10%", color: "bg-blue-400" },
       ],
-      tags: ["Water Crisis", "Scarcity", "Global"],
+      tags: ["Water Crisis", "Scarcity", "Real-time"],
+      source: "https://www.unwater.org/water-facts",
+      sourceName: "UN Water - Global Statistics",
     },
     {
       title: "Deforestation Impact",
-      description: "Forest loss and its environmental consequences",
+      description: "Real-time forest loss monitoring and consequences",
       icon: <Leaf className="w-8 h-8 text-green-600" />,
       stats: [
         { label: "Annual Forest Loss", value: "10M ha", color: "bg-red-500" },
@@ -52,11 +59,13 @@ const InfographicsSection = () => {
         { label: "Species at Risk", value: "1M+", color: "bg-yellow-500" },
         { label: "Carbon Storage Lost", value: "15%", color: "bg-gray-500" },
       ],
-      tags: ["Deforestation", "Biodiversity", "Carbon"],
+      tags: ["Deforestation", "Biodiversity", "Live Tracking"],
+      source: "https://www.globalforestwatch.org/",
+      sourceName: "Global Forest Watch",
     },
     {
       title: "Urban Population Growth",
-      description: "The rapid expansion of cities and environmental impact",
+      description: "Live data on city expansion and environmental impact",
       icon: <Users className="w-8 h-8 text-purple-600" />,
       stats: [
         { label: "Current Urban Population", value: "56%", color: "bg-purple-400" },
@@ -64,11 +73,13 @@ const InfographicsSection = () => {
         { label: "Megacities (10M+)", value: "33", color: "bg-pink-400" },
         { label: "Urban Energy Use", value: "78%", color: "bg-red-400" },
       ],
-      tags: ["Urbanization", "Population", "Cities"],
+      tags: ["Urbanization", "Population", "Real-time"],
+      source: "https://population.un.org/wup/",
+      sourceName: "UN - World Urbanization Prospects",
     },
     {
       title: "Plastic Pollution Facts",
-      description: "The scale of plastic waste and ocean pollution",
+      description: "Current data on plastic waste and ocean pollution",
       icon: <Globe className="w-8 h-8 text-cyan-600" />,
       stats: [
         { label: "Annual Plastic Production", value: "380M tons", color: "bg-red-500" },
@@ -76,7 +87,9 @@ const InfographicsSection = () => {
         { label: "Recycling Rate", value: "9%", color: "bg-green-500" },
         { label: "Microplastics in Water", value: "83%", color: "bg-orange-500" },
       ],
-      tags: ["Plastic", "Ocean", "Pollution"],
+      tags: ["Plastic", "Ocean", "Live Data"],
+      source: "https://www.unep.org/interactives/beat-plastic-pollution/",
+      sourceName: "UNEP - Plastic Pollution Data",
     },
   ];
 
@@ -140,6 +153,20 @@ const InfographicsSection = () => {
                       </Badge>
                     ))}
                   </div>
+
+                  {/* View Real Data Button */}
+                  <Button
+                    variant="default"
+                    size="sm"
+                    className="w-full mt-4 gap-2"
+                    onClick={() => window.open(infographic.source, '_blank')}
+                  >
+                    <ExternalLink className="w-4 h-4" />
+                    View Real-Time Data
+                  </Button>
+                  <p className="text-xs text-muted-foreground text-center mt-2">
+                    Source: {infographic.sourceName}
+                  </p>
                 </div>
               </CardContent>
             </Card>
