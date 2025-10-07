@@ -3,6 +3,9 @@ import ecosystemImage from "@/assets/ecosystem.jpg";
 import renewableImage from "@/assets/renewable-energy.jpg";
 import waterPollutionImage from "@/assets/water-pollution.jpg";
 import soilPollutionImage from "@/assets/soil-pollution.jpg";
+import noisePollutionImage from "@/assets/noise-pollution.jpg";
+import amazonRainforestImage from "@/assets/amazon-rainforest.jpg";
+import energyPyramidImage from "@/assets/energy-pyramid.jpg";
 
 interface ContentItem {
   title: string;
@@ -76,6 +79,16 @@ export const environmentalSections: Record<string, EnvironmentalSection> = {
         content: "Causes include excessive use of pesticides and fertilizers, industrial waste disposal, oil spills and chemical leaks, and heavy metals from mining. Impact includes reduced crop yields, groundwater contamination, and ecosystem disruption.",
         tags: ["Soil Health", "Agriculture", "Contamination"],
       },
+      {
+        title: "Noise Pollution",
+        description: "Excessive or harmful levels of noise in the environment causing health issues and disrupting wildlife.",
+        image: noisePollutionImage,
+        content: "Major sources include traffic (vehicles, aircraft), construction activities, industrial machinery, and urban development. Health effects include hearing loss, sleep disturbance, cardiovascular problems, and increased stress levels. Prevention involves sound barriers, quieter technologies, and urban planning regulations.",
+        tags: ["Sound Levels", "Health Impact", "Urban"],
+        links: [
+          { label: "EPA Noise Pollution", url: "https://www.epa.gov/clean-air-act-overview/title-iv-noise-pollution" }
+        ],
+      },
     ],
   },
 
@@ -94,6 +107,7 @@ export const environmentalSections: Record<string, EnvironmentalSection> = {
       {
         title: "Amazon Rainforest",
         description: "The world's largest tropical rainforest, home to incredible biodiversity and crucial for global climate.",
+        image: amazonRainforestImage,
         content: "The Amazon covers 6.7 million km² across 9 countries, contains 10% of known species on Earth, produces 20% of world's oxygen, and stores 90-140 billion tons of carbon. Major threats include deforestation, mining, and agriculture expansion.",
         tags: ["Rainforest", "Biodiversity", "Carbon Storage"],
         links: [
@@ -103,6 +117,7 @@ export const environmentalSections: Record<string, EnvironmentalSection> = {
       {
         title: "Energy Flow Pyramid",
         description: "Understanding how energy moves through trophic levels in ecosystems with 10% efficiency rule.",
+        image: energyPyramidImage,
         content: "Energy flows through trophic levels: Level 4 - Apex predators (10 kcal/m²), Level 3 - Secondary consumers (100 kcal/m²), Level 2 - Primary consumers (1,000 kcal/m²), Level 1 - Producers (10,000 kcal/m²). The 10% Rule states that only 10% of energy transfers between levels.",
         tags: ["Energy Transfer", "Trophic Levels", "Efficiency"],
       },
