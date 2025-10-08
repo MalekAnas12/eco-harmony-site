@@ -109,17 +109,17 @@ const InfographicsSection = () => {
           {infographics.map((infographic, index) => (
             <Card 
               key={index} 
-              className="nature-hover group animate-scale-in flex flex-col h-full"
+              className="hover-lift hover-shine hover-glow group animate-scale-in flex flex-col h-full transition-all duration-500"
               style={{ animationDelay: `${index * 0.1}s` }}
             >
               <CardHeader className="text-center">
                 <div className="flex justify-center mb-4">
                   {infographic.icon}
                 </div>
-                <CardTitle className="text-xl font-bold text-primary group-hover:text-primary-light transition-smooth">
+                <CardTitle className="text-xl font-bold text-primary group-hover:text-primary-light transition-all duration-300 group-hover:translate-x-1">
                   {infographic.title}
                 </CardTitle>
-                <CardDescription className="text-base leading-relaxed">
+                <CardDescription className="text-base leading-relaxed transition-colors duration-300 group-hover:text-foreground">
                   {infographic.description}
                 </CardDescription>
               </CardHeader>
@@ -129,12 +129,12 @@ const InfographicsSection = () => {
                   {/* Statistics */}
                   <div className="space-y-3">
                     {infographic.stats.map((stat, statIndex) => (
-                      <div key={statIndex} className="flex items-center justify-between">
+                      <div key={statIndex} className="flex items-center justify-between group/stat hover:translate-x-1 transition-transform duration-300">
                         <div className="flex items-center space-x-3 flex-1">
-                          <div className={`w-3 h-3 rounded-full ${stat.color}`} />
-                          <span className="text-sm text-foreground truncate">{stat.label}</span>
+                          <div className={`w-3 h-3 rounded-full ${stat.color} transition-all duration-300 group-hover/stat:scale-125 group-hover/stat:shadow-lg`} />
+                          <span className="text-sm text-foreground truncate transition-colors duration-300 group-hover/stat:text-primary">{stat.label}</span>
                         </div>
-                        <div className="text-sm font-bold text-primary ml-2">
+                        <div className="text-sm font-bold text-primary ml-2 transition-all duration-300 group-hover/stat:scale-110">
                           {stat.value}
                         </div>
                       </div>
@@ -147,7 +147,7 @@ const InfographicsSection = () => {
                       <Badge 
                         key={tagIndex} 
                         variant="secondary"
-                        className="text-xs"
+                        className="text-xs hover-lift transition-all duration-300 cursor-pointer"
                       >
                         {tag}
                       </Badge>
@@ -162,13 +162,13 @@ const InfographicsSection = () => {
                     <Button
                       variant="default"
                       size="sm"
-                      className="w-full gap-2"
+                      className="w-full gap-2 hover-lift transition-all duration-300 hover:shadow-glow"
                       onClick={() => window.open(infographic.source, '_blank')}
                     >
-                      <ExternalLink className="w-4 h-4" />
+                      <ExternalLink className="w-4 h-4 animate-pulse-slow" />
                       View Real-Time Data
                     </Button>
-                    <p className="text-xs text-muted-foreground text-center mt-2">
+                    <p className="text-xs text-muted-foreground text-center mt-2 transition-colors duration-300 group-hover:text-foreground">
                       Source: {infographic.sourceName}
                     </p>
                   </div>
@@ -179,21 +179,21 @@ const InfographicsSection = () => {
         </div>
 
         {/* Call to Action */}
-        <div className="text-center mt-16 animate-pulse">
-          <Card className="max-w-2xl mx-auto bg-gradient-nature shadow-xl border-4 border-red-500/50 animate-fade-in">
+        <div className="text-center mt-16 animate-glow">
+          <Card className="max-w-2xl mx-auto bg-gradient-nature shadow-xl border-4 border-red-500/50 animate-zoom-in hover-lift hover:border-red-500 transition-all duration-500">
             <CardContent className="p-8">
-              <h3 className="text-3xl font-bold mb-4 text-red-600 drop-shadow-lg">Take Action Today</h3>
-              <p className="text-lg mb-6 text-gray-900 font-medium">
+              <h3 className="text-3xl font-bold mb-4 text-red-600 drop-shadow-lg animate-pulse-slow">Take Action Today</h3>
+              <p className="text-lg mb-6 text-gray-900 font-medium animate-fade-in-up">
                 These statistics show the urgency of environmental action. Every individual choice matters in creating a sustainable future.
               </p>
               <div className="flex flex-wrap gap-4 justify-center">
-                <Badge variant="secondary" className="bg-primary text-primary-foreground hover:bg-primary/90">
+                <Badge variant="secondary" className="bg-primary text-primary-foreground hover:bg-primary/90 hover-lift transition-all duration-300 cursor-pointer animate-fade-in stagger-1">
                   Learn More
                 </Badge>
-                <Badge variant="secondary" className="bg-primary text-primary-foreground hover:bg-primary/90">
+                <Badge variant="secondary" className="bg-primary text-primary-foreground hover:bg-primary/90 hover-lift transition-all duration-300 cursor-pointer animate-fade-in stagger-2">
                   Get Involved
                 </Badge>
-                <Badge variant="secondary" className="bg-primary text-primary-foreground hover:bg-primary/90">
+                <Badge variant="secondary" className="bg-primary text-primary-foreground hover:bg-primary/90 hover-lift transition-all duration-300 cursor-pointer animate-fade-in stagger-3">
                   Share Knowledge
                 </Badge>
               </div>

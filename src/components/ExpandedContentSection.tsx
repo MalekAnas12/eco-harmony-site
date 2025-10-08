@@ -48,29 +48,29 @@ const ExpandedContentSection = ({ id, title, subtitle, items, className = "" }: 
           {items.map((item, index) => (
             <Card 
               key={index} 
-              className="nature-hover group cursor-pointer animate-scale-in h-full"
+              className="hover-lift hover-shine hover-glow group cursor-pointer animate-scale-in h-full transition-all duration-500"
               style={{ animationDelay: `${index * 0.1}s` }}
               onClick={() => handleCardClick(item)}
             >
               {item.image && (
-                <div className="relative overflow-hidden rounded-t-lg h-48">
+                <div className="relative overflow-hidden rounded-t-lg h-48 group/image">
                   <img 
                     src={item.image} 
                     alt={item.title}
-                    className="w-full h-full object-cover transition-smooth group-hover:scale-110"
+                    className="w-full h-full object-cover transition-all duration-700 group-hover:scale-110 group-hover:rotate-1"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent transition-opacity duration-300 group-hover:opacity-75" />
                 </div>
               )}
               
               <CardHeader>
                 <div className="flex items-start justify-between">
-                  <CardTitle className="text-xl font-bold text-primary group-hover:text-primary-light transition-smooth">
+                  <CardTitle className="text-xl font-bold text-primary group-hover:text-primary-light transition-all duration-300 group-hover:translate-x-1">
                     {item.title}
                   </CardTitle>
-                  <ChevronRight className="w-5 h-5 text-muted-foreground group-hover:text-primary transition-smooth group-hover:translate-x-1" />
+                  <ChevronRight className="w-5 h-5 text-muted-foreground group-hover:text-primary transition-all duration-300 group-hover:translate-x-2" />
                 </div>
-                <CardDescription className="text-base leading-relaxed">
+                <CardDescription className="text-base leading-relaxed transition-colors duration-300 group-hover:text-foreground">
                   {item.description}
                 </CardDescription>
               </CardHeader>
@@ -78,7 +78,7 @@ const ExpandedContentSection = ({ id, title, subtitle, items, className = "" }: 
               <CardContent className="flex-1 flex flex-col">
                 <div className="space-y-4 flex-1">
                   {/* Content */}
-                  <div className="text-sm text-foreground leading-relaxed">
+                  <div className="text-sm text-foreground leading-relaxed transition-all duration-300 group-hover:text-foreground/90">
                     {item.content}
                   </div>
 
@@ -89,7 +89,7 @@ const ExpandedContentSection = ({ id, title, subtitle, items, className = "" }: 
                         <Badge 
                           key={tagIndex} 
                           variant="secondary"
-                          className="text-xs"
+                          className="text-xs hover-lift transition-all duration-300 cursor-pointer"
                         >
                           {tag}
                         </Badge>
@@ -105,10 +105,10 @@ const ExpandedContentSection = ({ id, title, subtitle, items, className = "" }: 
                           key={linkIndex}
                           variant="outline"
                           size="sm"
-                          className="h-8 text-xs"
+                          className="h-8 text-xs hover-lift transition-all duration-300"
                           onClick={() => window.open(link.url, '_blank')}
                         >
-                          <ExternalLink className="w-3 h-3 mr-1" />
+                          <ExternalLink className="w-3 h-3 mr-1 animate-pulse-slow" />
                           {link.label}
                         </Button>
                       ))}
