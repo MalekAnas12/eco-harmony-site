@@ -22,27 +22,26 @@ const Navigation = ({ activeSection, onSectionChange }: NavigationProps) => {
   ];
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 glass-dark backdrop-blur-md border-b border-border shadow-nature transition-all duration-300">
+    <nav className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-md border-b border-border">
       <div className="container mx-auto px-4 lg:px-8">
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
-          <div className="flex items-center space-x-2 animate-slide-in-left group cursor-pointer">
-            <div className="w-8 h-8 rounded-full gradient-forest flex items-center justify-center transition-all duration-300 group-hover:scale-110 group-hover:shadow-glow">
-              <Leaf className="w-5 h-5 text-primary-foreground animate-pulse-slow" />
+          <div className="flex items-center space-x-2">
+            <div className="w-8 h-8 rounded-full gradient-forest flex items-center justify-center">
+              <Leaf className="w-5 h-5 text-primary-foreground" />
             </div>
-            <span className="font-bold text-xl text-primary transition-all duration-300 group-hover:text-primary-light">EcoAware</span>
+            <span className="font-bold text-xl text-primary">EcoAware</span>
           </div>
 
           {/* Desktop Navigation */}
-          <div className="hidden lg:flex items-center space-x-1 animate-fade-in">
-            {navItems.map((item, index) => (
+          <div className="hidden lg:flex items-center space-x-1">
+            {navItems.map((item) => (
               <Button
                 key={item.id}
                 variant={activeSection === item.id ? "default" : "ghost"}
                 size="sm"
                 onClick={() => onSectionChange(item.id)}
-                className="transition-all duration-300 hover:scale-105 hover-lift"
-                style={{ animationDelay: `${index * 0.1}s` }}
+                className="transition-smooth"
               >
                 {item.label}
               </Button>
@@ -62,9 +61,9 @@ const Navigation = ({ activeSection, onSectionChange }: NavigationProps) => {
 
         {/* Mobile Navigation */}
         {isMenuOpen && (
-          <div className="lg:hidden py-4 border-t border-border animate-slide-up glass">
+          <div className="lg:hidden py-4 border-t border-border animate-fade-in">
             <div className="flex flex-col space-y-2">
-              {navItems.map((item, index) => (
+              {navItems.map((item) => (
                 <Button
                   key={item.id}
                   variant={activeSection === item.id ? "default" : "ghost"}
@@ -73,7 +72,7 @@ const Navigation = ({ activeSection, onSectionChange }: NavigationProps) => {
                     onSectionChange(item.id);
                     setIsMenuOpen(false);
                   }}
-                  className={`justify-start transition-all duration-300 hover-lift animate-fade-in-up stagger-${Math.min(index + 1, 6)}`}
+                  className="justify-start transition-smooth"
                 >
                   {item.label}
                 </Button>
