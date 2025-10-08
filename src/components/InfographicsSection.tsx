@@ -179,21 +179,21 @@ const InfographicsSection = () => {
         </div>
 
         {/* Call to Action */}
-        <div className="text-center mt-16">
-          <Card className="max-w-2xl mx-auto bg-gradient-nature text-white shadow-xl border-2 border-white/20">
+        <div className="text-center mt-16 animate-pulse">
+          <Card className="max-w-2xl mx-auto bg-gradient-nature shadow-xl border-4 border-red-500/50 animate-fade-in">
             <CardContent className="p-8">
-              <h3 className="text-2xl font-bold mb-4 text-red-500">Take Action Today</h3>
-              <p className="text-lg mb-6 opacity-90">
+              <h3 className="text-3xl font-bold mb-4 text-red-600 drop-shadow-lg">Take Action Today</h3>
+              <p className="text-lg mb-6 text-gray-900 font-medium">
                 These statistics show the urgency of environmental action. Every individual choice matters in creating a sustainable future.
               </p>
               <div className="flex flex-wrap gap-4 justify-center">
-                <Badge variant="secondary" className="bg-white/20 text-white hover:bg-white/30">
+                <Badge variant="secondary" className="bg-primary text-primary-foreground hover:bg-primary/90">
                   Learn More
                 </Badge>
-                <Badge variant="secondary" className="bg-white/20 text-white hover:bg-white/30">
+                <Badge variant="secondary" className="bg-primary text-primary-foreground hover:bg-primary/90">
                   Get Involved
                 </Badge>
-                <Badge variant="secondary" className="bg-white/20 text-white hover:bg-white/30">
+                <Badge variant="secondary" className="bg-primary text-primary-foreground hover:bg-primary/90">
                   Share Knowledge
                 </Badge>
               </div>

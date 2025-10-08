@@ -14,6 +14,9 @@ import biodiversityHotspotsImage from "@/assets/biodiversity-hotspots.jpg";
 import urbanizationImage from "@/assets/urbanization.jpg";
 import individualActionsImage from "@/assets/individual-actions.jpg";
 import environmentalLawsImage from "@/assets/environmental-laws.jpg";
+import definitionScopeImage from "@/assets/definition-scope.jpg";
+import environmentalTimelineImage from "@/assets/environmental-timeline.jpg";
+import importanceEducationImage from "@/assets/importance-education.jpg";
 
 interface ContentItem {
   title: string;
@@ -40,18 +43,21 @@ export const environmentalSections: Record<string, EnvironmentalSection> = {
       {
         title: "Definition & Scope",
         description: "Environmental studies is an interdisciplinary field that integrates physical, biological, and social sciences.",
+        image: definitionScopeImage,
         content: "Environmental studies is the systematic study of the environment and the solution of environmental problems. It covers atmospheric, aquatic, terrestrial, and space environments including physical environment (air, water, soil), biological environment (plants, animals, microorganisms), and social environment (culture, politics, economics).",
         tags: ["Interdisciplinary", "Science", "Environment"],
       },
       {
         title: "Environmental Movements Timeline",
         description: "Key milestones in the history of environmental awareness and conservation efforts.",
+        image: environmentalTimelineImage,
         content: "1962: Rachel Carson publishes 'Silent Spring' • 1970: First Earth Day celebrated • 1972: UN Conference on Human Environment (Stockholm) • 1987: Montreal Protocol on Ozone Depletion • 1992: Earth Summit in Rio de Janeiro • 2015: Paris Climate Agreement",
         tags: ["History", "Milestones", "Conservation"],
       },
       {
         title: "Importance of Environmental Studies",
         description: "Why environmental education is crucial for sustainable development and human survival.",
+        image: importanceEducationImage,
         content: "Environmental studies helps us understand human impact on natural systems, sustainable resource management, climate change mitigation strategies, biodiversity conservation methods, and environmental policy development. It's essential for creating a sustainable future.",
         tags: ["Education", "Sustainability", "Future"],
       },
