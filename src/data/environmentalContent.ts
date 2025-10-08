@@ -8,6 +8,12 @@ import amazonRainforestImage from "@/assets/amazon-rainforest.jpg";
 import energyPyramidImage from "@/assets/energy-pyramid.jpg";
 import nonRenewableImage from "@/assets/non-renewable-resources.jpg";
 import sustainableManagementImage from "@/assets/sustainable-management.jpg";
+import typesBiodiversityImage from "@/assets/types-biodiversity.jpg";
+import conservationStrategiesImage from "@/assets/conservation-strategies.jpg";
+import biodiversityHotspotsImage from "@/assets/biodiversity-hotspots.jpg";
+import urbanizationImage from "@/assets/urbanization.jpg";
+import individualActionsImage from "@/assets/individual-actions.jpg";
+import environmentalLawsImage from "@/assets/environmental-laws.jpg";
 
 interface ContentItem {
   title: string;
@@ -134,18 +140,21 @@ export const environmentalSections: Record<string, EnvironmentalSection> = {
       {
         title: "Types of Biodiversity",
         description: "Understanding genetic, species, and ecosystem diversity that makes life on Earth possible.",
+        image: typesBiodiversityImage,
         content: "Three levels of biodiversity: Genetic Diversity (variation within species), Species Diversity (number of different species), and Ecosystem Diversity (variety of habitats). Globally, approximately 8.7 million species are estimated to exist, but only 1.2 million have been identified.",
         tags: ["Genetic", "Species", "Ecosystem"],
       },
       {
         title: "Conservation Strategies",
         description: "In-situ and ex-situ conservation methods to protect endangered species and habitats.",
+        image: conservationStrategiesImage,
         content: "In-situ conservation includes national parks, wildlife sanctuaries, biosphere reserves, and protected marine areas. Ex-situ conservation involves zoos, botanical gardens, seed banks, and cryopreservation. Both approaches are essential for comprehensive biodiversity protection.",
         tags: ["Protection", "Reserves", "Conservation"],
       },
       {
         title: "Biodiversity Hotspots",
         description: "Regions with exceptional biodiversity that are under severe threat from human activities.",
+        image: biodiversityHotspotsImage,
         content: "Hotspots are defined by having >1,500 endemic plant species and <30% original habitat remaining. Major hotspots include Madagascar & Indian Ocean Islands, Western Ghats & Sri Lanka, Atlantic Forest (Brazil), and Caribbean Islands.",
         tags: ["Hotspots", "Endemic", "Threatened"],
         links: [
@@ -195,18 +204,21 @@ export const environmentalSections: Record<string, EnvironmentalSection> = {
       {
         title: "Population & Urbanization",
         description: "The impact of growing population and urban development on natural resources and ecosystems.",
+        image: urbanizationImage,
         content: "Current global population exceeds 8 billion people, with 56% (4.4 billion) living in urban areas. By 2050, 68% of the population is projected to be urban. This creates increased environmental pressure through higher resource demand, habitat loss, and pollution.",
         tags: ["Population", "Urban Planning", "Resource Demand"],
       },
       {
         title: "Individual Environmental Actions",
         description: "Daily habits and choices that can significantly reduce your environmental footprint.",
+        image: individualActionsImage,
         content: "10 Daily Green Habits: Use renewable energy at home, Reduce-reuse-recycle, Choose sustainable transportation, Eat more plant-based foods, Conserve water and energy, Support eco-friendly products, Plant trees, Educate others, Participate in cleanups, Vote for environmental policies.",
         tags: ["Personal Action", "Sustainability", "Lifestyle"],
       },
       {
         title: "Environmental Laws & Ethics",
         description: "Legal frameworks and ethical principles guiding environmental protection and sustainable development.",
+        image: environmentalLawsImage,
         content: "Key international agreements include Paris Climate Agreement (2015), Convention on Biological Diversity, Kyoto Protocol, and Montreal Protocol. Environmental ethics emphasizes the intrinsic value of nature, intergenerational justice, and the precautionary principle.",
         tags: ["Policy", "Ethics", "International Law"],
         links: [

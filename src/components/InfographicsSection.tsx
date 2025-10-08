@@ -180,9 +180,9 @@ const InfographicsSection = () => {
 
         {/* Call to Action */}
         <div className="text-center mt-16">
-          <Card className="max-w-2xl mx-auto bg-gradient-nature text-white">
+          <Card className="max-w-2xl mx-auto bg-gradient-nature text-white shadow-xl border-2 border-white/20">
             <CardContent className="p-8">
-              <h3 className="text-2xl font-bold mb-4">Take Action Today</h3>
+              <h3 className="text-2xl font-bold mb-4 text-red-500">Take Action Today</h3>
               <p className="text-lg mb-6 opacity-90">
                 These statistics show the urgency of environmental action. Every individual choice matters in creating a sustainable future.
               </p>
